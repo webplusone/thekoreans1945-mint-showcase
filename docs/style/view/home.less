@@ -1,0 +1,182 @@
+.home-view {
+    max-width: 1440px;
+    width    : 100%;
+
+    >.top-image {
+        display: none;
+    }
+
+    >.content {
+        display        : flex;
+        justify-content: space-around;
+        align-items    : center;
+        padding        : 60px;
+
+        >.mint-container {
+            display        : flex;
+            flex-direction : column;
+            justify-content: center;
+            align-items    : center;
+
+            >.title-container {
+                display        : flex;
+                flex-direction : column;
+                justify-content: center;
+                align-items    : center;
+                letter-spacing : 3px;
+                word-spacing   : 4px;
+
+                >.subtitle {
+                    font-size: 25px;
+                }
+            }
+
+            >.info-container {
+                display        : flex;
+                width          : 100%;
+                justify-content: space-between;
+                padding        : 32px 80px;
+
+                >.info {
+                    display    : flex;
+                    align-items: center;
+
+                    >h6 {
+                        font-size   : 46px;
+                        color       : #d6ff46;
+                        margin-right: 16px;
+                    }
+
+                    >p {
+                        display         : flex;
+                        justify-content : center;
+                        align-items     : center;
+                        font-size       : 46px;
+                        background-color: black;
+                        padding         : 0px 20px;
+                    }
+                }
+            }
+
+            >.wallet-info {
+                margin-top   : 32px;
+                padding      : 0px 80px;
+                width        : 100%;
+                text-align   : center;
+                margin-bottom: 32px;
+
+                >p {
+                    background-color: black;
+                    display         : flex;
+                    justify-content : center;
+                    align-items     : center;
+                    padding         : 4px;
+                    font-size       : 46px;
+                    margin-bottom   : 8px;
+                }
+
+                >a {
+                    font-size: 46px;
+                    color    : #d6ff46;
+                }
+            }
+
+            >.mobile-crypto {
+                display: none;
+            }
+
+            >.caption {
+                font-size     : 30px;
+                letter-spacing: 4px;
+                word-spacing  : 6px;
+                line-height   : 2.5rem;
+            }
+        }
+    }
+
+    >.bottom-image {
+        position: absolute;
+        bottom  : 0;
+        z-index : -1;
+    }
+
+    @media @phone {
+        display        : flex;
+        flex-direction : column;
+        align-items    : center;
+        justify-content: center;
+
+        >.top-image {
+            display  : block;
+            transform: scaleY(-1);
+            max-width: 360px;
+        }
+
+        >.content {
+            padding: 40px 0px;
+
+            >.crypto {
+                display: none;
+            }
+
+            >.mint-container {
+
+                >.title-container {
+                    >img {
+                        max-width: 360px;
+                    }
+
+                    >.subtitle {
+                        display: none;
+                    }
+                }
+
+                >.info-container {
+                    padding   : 20px;
+                    margin-top: 20px;
+
+                    >.info {
+
+                        >h6 {
+                            font-size   : 20px;
+                            margin-right: 8px;
+                        }
+
+                        >p {
+                            font-size: 20px;
+                        }
+                    }
+                }
+
+                >.wallet-info {
+
+                    >p {
+                        font-size: 20px;
+                    }
+
+                    >a {
+                        font-size: 20px;
+                    }
+                }
+
+                >.mobile-crypto {
+                    display: block;
+                    margin : 20px 0px;
+                }
+
+                >.caption {
+                    font-size     : 20px;
+                    letter-spacing: 2px;
+                    word-spacing  : 3px;
+                    line-height   : 1.5rem;
+                }
+            }
+        }
+
+        >.bottom-image {
+            // position : relative;
+            max-width: 360px;
+        }
+
+    }
+}

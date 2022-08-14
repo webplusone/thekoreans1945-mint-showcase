@@ -1,0 +1,624 @@
+/*
+https://github.com/Hanul/sky-css-base
+v0.0.1 | 20210109
+Author: Sim Young Jae
+License: MIT
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+*,
+*:focus {
+  outline: 0;
+}
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+a,
+button,
+input[type=button],
+input[type=submit],
+input[type=reset] {
+  cursor: pointer;
+}
+button,
+input {
+  border: none;
+}
+[hidden] {
+  display: none !important;
+}
+[contenteditable] {
+  -webkit-tap-highlight-color: transparent;
+}
+.float-wrapper:after {
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+@font-face {
+  font-family: "PoplarStd";
+  src: url("../fonts/PoplarStd.woff2") format("woff2");
+}
+body {
+  font-family: "PoplarStd";
+  background: #6b8493;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  color: white;
+}
+.popup-background {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 99999;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  padding: 20px 0;
+}
+.dialogue.alert {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  max-width: 500px;
+  width: 90%;
+  height: 500px;
+  margin: auto;
+  padding: 50px;
+  background: #FFF200;
+}
+.dialogue.alert > h2 {
+  font-family: Arthead FREE;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 73.5045px;
+  line-height: 71px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: #000000;
+  margin-bottom: 16px;
+}
+.dialogue.alert > p {
+  font-family: NanumBarunpen;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: #000000;
+}
+.dialogue.alert > .button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 8px 0px;
+}
+.dialogue.alert > .button-container > button {
+  font-family: NanumBarunpen;
+  background-color: black;
+  color: #FFF200;
+  padding: 8px 16px;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  margin: 4px;
+}
+.dialogue.alert > .button-container > button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.dialogue.confirm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  max-width: 500px;
+  width: 90%;
+  height: 500px;
+  margin: auto;
+  padding: 50px;
+  background: #FFF200;
+}
+.dialogue.confirm > h2 {
+  font-family: Arthead FREE;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 73.5045px;
+  line-height: 71px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: #000000;
+  margin-bottom: 16px;
+}
+.dialogue.confirm > p {
+  font-family: NanumBarunpen;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: #000000;
+}
+.dialogue.confirm > .button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 8px 0px;
+}
+.dialogue.confirm > .button-container > button {
+  font-family: NanumBarunpen;
+  background-color: black;
+  color: #FFF200;
+  padding: 8px 16px;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  margin: 4px;
+}
+.dialogue.confirm > .button-container > button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.dialogue.prompt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+  height: 500px;
+  margin: auto;
+  padding: 50px;
+  background: #FFF200;
+}
+.dialogue.prompt > h2 {
+  font-family: Arthead FREE;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 73.5045px;
+  line-height: 71px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: #000000;
+  margin-bottom: 16px;
+}
+.dialogue.prompt > p {
+  font-family: NanumBarunpen;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: #000000;
+}
+.dialogue.prompt > .input-container {
+  width: 100%;
+  margin-top: 32px;
+}
+.dialogue.prompt > .input-container > input {
+  width: 100%;
+  background-color: transparent;
+  border-bottom: 1px solid #000000;
+}
+.dialogue.prompt > .button-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px;
+}
+.dialogue.prompt > .button-container > button {
+  font-family: NanumBarunpen;
+  background-color: black;
+  color: #FFF200;
+  padding: 8px 16px;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  margin: 4px;
+}
+.dialogue.prompt > .button-container > button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.connect-wallet-popup {
+  position: relative;
+  max-width: 348px;
+  width: 100%;
+  margin: auto;
+  border-radius: 4px;
+  background-color: #000000;
+  border: 1px solid #FFF200;
+  padding: 60px;
+}
+.connect-wallet-popup > h2 {
+  font-family: Arthead FREE;
+  font-size: 50px;
+  line-height: 48px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: #FFF200;
+}
+.connect-wallet-popup > hr {
+  border: 1px solid #FFF200;
+  margin-top: 7px;
+  margin-bottom: 12px;
+}
+.connect-wallet-popup > p {
+  font-family: NanumBarunpen;
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: white;
+}
+.connect-wallet-popup > .button-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+}
+.connect-wallet-popup > .button-container > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: NanumBarunpen;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: #FFF200;
+  padding: 5px 0px;
+  text-decoration: none;
+  margin-bottom: 6px;
+  width: 100%;
+  height: 34px;
+}
+.connect-wallet-popup > .button-container > a:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.connect-wallet-popup > .button-container > a > img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+.connect-wallet-popup > .button-container > .connect-kaikas-button {
+  background: #6D6161;
+  color: black;
+}
+.connect-wallet-popup > .button-container > .connect-klip-button {
+  background: #FFF200;
+  color: black;
+}
+.klip-qr-popup {
+  position: relative;
+  max-width: 348px;
+  width: 100%;
+  margin: auto;
+  border-radius: 4px;
+  background-color: #000000;
+  border: 1px solid #FFF200;
+  padding: 50px;
+}
+.klip-qr-popup > h2 {
+  font-family: Arthead FREE;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 33px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: #FFF200;
+}
+.klip-qr-popup > hr {
+  border: 1px solid #FFF200;
+  margin-top: 16px;
+  margin-bottom: 10px;
+}
+.klip-qr-popup > .qr {
+  padding: 16px 0;
+  text-align: center;
+}
+.klip-qr-popup > p {
+  font-family: NanumBarunpen;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 11px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: white;
+  line-height: 1.6rem;
+}
+.klip-qr-popup > .button-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px;
+}
+.klip-qr-popup > .button-container > button {
+  background-color: transparent;
+  color: white;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+.klip-qr-popup > .button-container > button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.home-view {
+  max-width: 1440px;
+  width: 100%;
+}
+.home-view > .top-image {
+  display: none;
+}
+.home-view > .content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 60px;
+}
+.home-view > .content > .mint-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.home-view > .content > .mint-container > .title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 3px;
+  word-spacing: 4px;
+}
+.home-view > .content > .mint-container > .title-container > .subtitle {
+  font-size: 25px;
+}
+.home-view > .content > .mint-container > .info-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 32px 80px;
+}
+.home-view > .content > .mint-container > .info-container > .info {
+  display: flex;
+  align-items: center;
+}
+.home-view > .content > .mint-container > .info-container > .info > h6 {
+  font-size: 46px;
+  color: #d6ff46;
+  margin-right: 16px;
+}
+.home-view > .content > .mint-container > .info-container > .info > p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 46px;
+  background-color: black;
+  padding: 0px 20px;
+}
+.home-view > .content > .mint-container > .wallet-info {
+  margin-top: 32px;
+  padding: 0px 80px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 32px;
+}
+.home-view > .content > .mint-container > .wallet-info > p {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+  font-size: 46px;
+  margin-bottom: 8px;
+}
+.home-view > .content > .mint-container > .wallet-info > a {
+  font-size: 46px;
+  color: #d6ff46;
+}
+.home-view > .content > .mint-container > .mobile-crypto {
+  display: none;
+}
+.home-view > .content > .mint-container > .caption {
+  font-size: 30px;
+  letter-spacing: 4px;
+  word-spacing: 6px;
+  line-height: 2.5rem;
+}
+.home-view > .bottom-image {
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+}
+@media only screen and (max-width: 719px) {
+  .home-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .home-view > .top-image {
+    display: block;
+    transform: scaleY(-1);
+    max-width: 360px;
+  }
+  .home-view > .content {
+    padding: 40px 0px;
+  }
+  .home-view > .content > .crypto {
+    display: none;
+  }
+  .home-view > .content > .mint-container > .title-container > img {
+    max-width: 360px;
+  }
+  .home-view > .content > .mint-container > .title-container > .subtitle {
+    display: none;
+  }
+  .home-view > .content > .mint-container > .info-container {
+    padding: 20px;
+    margin-top: 20px;
+  }
+  .home-view > .content > .mint-container > .info-container > .info > h6 {
+    font-size: 20px;
+    margin-right: 8px;
+  }
+  .home-view > .content > .mint-container > .info-container > .info > p {
+    font-size: 20px;
+  }
+  .home-view > .content > .mint-container > .wallet-info > p {
+    font-size: 20px;
+  }
+  .home-view > .content > .mint-container > .wallet-info > a {
+    font-size: 20px;
+  }
+  .home-view > .content > .mint-container > .mobile-crypto {
+    display: block;
+    margin: 20px 0px;
+  }
+  .home-view > .content > .mint-container > .caption {
+    font-size: 20px;
+    letter-spacing: 2px;
+    word-spacing: 3px;
+    line-height: 1.5rem;
+  }
+  .home-view > .bottom-image {
+    max-width: 360px;
+  }
+}
+
